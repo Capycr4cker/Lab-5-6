@@ -1,53 +1,38 @@
-/*import './NewTask.css';
-import Form from '../../components/Form/Form';
-import { Link } from 'react-router-dom';
-
-
-const NewTask = () => {
-
-    return (
-        <>
-            <h1> Formulario</h1>
-            <Form />
-            <Link to="/tasks">
-                <button> Back </button>
-            </Link>
-            <Link to="/">
-                <button> Home </button>
-            </Link>
-        </>
-    )
-}
-
-export default NewTask;*/
-
 import './NewTask.css';
 import Form from '../../components/Form/Form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const NewTask = () => {
+    const navigate = useNavigate();
     const handleFormSubmit = (nombre: string) => {
         const savedTasks = localStorage.getItem('tasks');
         const tasks = savedTasks ? JSON.parse(savedTasks) : [];
 
+
         const newTask = {
-        id: Date.now().toString(),
-        title: nombre,
-        done: false,
+            id: crypto.randomUUID(),
+            name: nombre.trim(),
+            done: false,
         };
+        if (!newTask.name) {
+            alert("El nombre es obligatorio");
+            return;
+        }
 
         tasks.push(newTask);
         localStorage.setItem('tasks', JSON.stringify(tasks));
+       
+        console.log('Se está guardando:', newTask);
 
-        window.location.href = '/tasks';
+        navigate('/tasks');
     };
 
     return (
         <>
-        <h1>Formulario</h1>
-        <Form onSubmit={handleFormSubmit} />
-        <Link to="/tasks"><button> Back </button></Link>
-        <Link to="/"><button> Home </button></Link>
+            <h1>Form</h1>
+            <Form onSubmit={handleFormSubmit} />
+            <Link to="/tasks"><button> Back </button></Link>
+            <Link to="/"><button> Home </button></Link>
         </>
     );
 };
