@@ -4,16 +4,18 @@ import { useState } from "react";
 import { regCorreo, regNombre, regTelefono } from "../../utils/validations/expressions";
 
 
+interface FormProps {
+    onSubmit?: (nombre: string) => void;
+}
 
-const Form = () => {
-    const [formulario, setFormulario] = useState(
-        {
-            nombre: "",
-            mail: "",
-            mensaje: "",
-            telefono: "",
-        }
-    );
+const Form = ({ onSubmit }: FormProps) => {
+    const [formulario, setFormulario] = useState({
+        nombre: "",
+        mail: "",
+        mensaje: "",
+        telefono: "",
+    });
+
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
@@ -38,14 +40,18 @@ const Form = () => {
             console.error("error en formulario")
         } else {
             console.log("formulario enviado")
+            // Si se pasa la función por props, la ejecutamos con el nombre
+            if (onSubmit) {
+                onSubmit(formulario.nombre);
+            }
         }
     }
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target;
         setFormulario({ ...formulario, [name]: value });
-
     }
+
     return (
         <>
             <h1>Mi Formulario {formulario.nombre}</h1>
@@ -70,7 +76,6 @@ const Form = () => {
                     <button type="submit">Enviar</button>
                 </div>
             </form>
-
         </>
     )
 }
