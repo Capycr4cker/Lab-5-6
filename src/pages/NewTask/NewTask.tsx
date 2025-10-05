@@ -4,14 +4,15 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const NewTask = () => {
     const navigate = useNavigate();
-    const handleFormSubmit = (nombre: string) => {
+    const handleFormSubmit = (data: { name: string; description: string }) => {
         const savedTasks = localStorage.getItem('tasks');
         const tasks = savedTasks ? JSON.parse(savedTasks) : [];
 
 
         const newTask = {
             id: crypto.randomUUID(),
-            name: nombre.trim(),
+            name: data.name.trim(),
+            description: data.description.trim(),
             done: false,
         };
         if (!newTask.name) {

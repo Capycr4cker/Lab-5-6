@@ -5,7 +5,7 @@ import { revisarReglasName } from "../../utils/validations/validations";
 
 
 interface FormProps {
-    onSubmit?: (nombre: string) => void;
+    onSubmit?: (data: { name: string; description: string }) => void;
 }
 
 
@@ -36,9 +36,12 @@ const Form = ({ onSubmit }: FormProps) => {
 
         setErrorsName(errorsName);
 
-        if (errorsName.length > 0 ) return;
+        if (errorsName.length > 0) return;
 
-        if (onSubmit) onSubmit(formulario.name.trim());
+        if (onSubmit) onSubmit({
+            name: formulario.name.trim(),
+            description: formulario.description.trim(),
+        });
     };
 
     return (
