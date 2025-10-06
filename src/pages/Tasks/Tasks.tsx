@@ -32,7 +32,6 @@ const Tasks = () => {
     return (
         <>
             <h1>My tasks</h1>
-            {/* {tasks.length === 0 && <p>No hay tareas todavía.</p>} */}
 
             <table>
                 <thead>
@@ -62,9 +61,10 @@ const Tasks = () => {
                     ))}
                 </tbody>
             </table>
-
+            <div className="task-buttons">
             <Link to="/"><button> Back </button></Link>
             <Link to="new"><button> New task </button></Link>
+            </div>
         </>
     );
 };

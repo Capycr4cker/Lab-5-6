@@ -21,7 +21,6 @@ const NewTask = () => {
 
         tasks.push(newTask);
         localStorage.setItem('tasks', JSON.stringify(tasks));
-       
         console.log('Se está guardando:', newTask);
 
         navigate('/tasks');
@@ -31,8 +30,10 @@ const NewTask = () => {
         <>
             <h1>Form</h1>
             <Form onSubmit={handleFormSubmit} />
+            <div className="task-buttons">
             <Link to="/tasks"><button> Back </button></Link>
             <Link to="/"><button> Home </button></Link>
+            </div>
         </>
     );
 };

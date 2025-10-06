@@ -1,0 +1,31 @@
+main h1 {
+    font-size: 2.2rem;
+    color: #999;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+main button {
+    background-color: pink;
+    color: #333;
+    border: none;
+    padding: 14px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+main button:hover {
+    background-color: #ff94c2;
+    transform: translateY(-3px) scale(1.05);
+}
+
+a {
+    text-decoration: none;
+}

@@ -1,15 +1,89 @@
-table{
-    border-collapse: collapse;
-    width: 500px;
-    border: 1px solid pink;
-
+/* Contenedor general */
+body {
+    background-color: #555;
+    font-family: Arial, sans-serif;
 }
 
-thead{
-    background-color: pink;
-    text-align: left; 
-}
-
-td, th{
+h1 {
     text-align: center;
+    color: #444;
+    text-transform: uppercase;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    border: 2px solid pink;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+    background-color: pink;
+}
+
+th {
+    padding: 12px;
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+}
+th:first-child {
+    width: 200px; /* ajusta según lo necesites */
+}
+
+
+td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ffd6e8;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #888;
+}
+
+tbody tr:hover {
+    background-color: #777;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button {
+    background-color: pink;
+    color: #333;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin: 4px;
+}
+
+button:hover {
+    background-color: #ff94c2;
+    transform: scale(1.05);
+    justify-content: center;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+}
+
+.done {
+    text-decoration: line-through;
+    color: #888;
+}
+.task-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
