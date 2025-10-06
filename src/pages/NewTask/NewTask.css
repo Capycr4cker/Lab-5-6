@@ -1,0 +1,42 @@
+body {
+    background-color: #fff5fa;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: #444;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.newtask-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    background-color: pink;
+    color: #333;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 8px;
+    transition: all 0.3s ease;
+    justify-content: center;
+}
+
+button:hover {
+    background-color: #ff94c2;
+    transform: translateY(-2px);
+}
+.task-buttons {
+    display: flex;
+    justify-content: center; 
+    gap: 15px;
+    margin-top: 20px;
+}
