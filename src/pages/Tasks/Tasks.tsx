@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 interface Task {
     id: string;
     name: string;
+    description: string;
     done: boolean;
 }
 
@@ -38,6 +39,7 @@ const Tasks = () => {
                     <tr>
                         <th>ID Task</th>
                         <th>Name</th>
+                        <th>Description</th>
                         <th>Done</th>
                         <th>Actions</th>
                     </tr>
@@ -47,6 +49,7 @@ const Tasks = () => {
                         <tr key={task.id}>
                             <td>{task.id}</td>
                             <td>{task.name}</td>
+                            <td>{task.description}</td>
                             <td>
                                 <input
                                     type="checkbox"
