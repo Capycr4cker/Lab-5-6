@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const NewTask = () => {
     const navigate = useNavigate();
+    
     const handleFormSubmit = (data: { name: string; description: string }) => {
         const savedTasks = localStorage.getItem('tasks');
         const tasks = savedTasks ? JSON.parse(savedTasks) : [];
