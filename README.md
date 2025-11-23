@@ -1,7 +1,15 @@
-# INTEGRANTES LABORATORIO 5 :
+# INTEGRANTES LABORATORIO 6 :
 # ANDREA ARAVENA
 # LAURY ANGULO
 
+# Imagen docker:
+`docker pull andicul/laboratorio-6:aa`
+
+# Nombre de imagen:
+`laboratorio-6:aa`
+
+# Repositorio github:
+`https://github.com/Capycr4cker/Lab-5-6`
 
 # React + TypeScript + Vite
 
