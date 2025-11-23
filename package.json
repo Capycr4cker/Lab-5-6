@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "docker": "docker build --tag 'laboratorio-6:aa' . && docker tag laboratorio-6:aa andicul/laboratorio-6:aa && docker push andicul/laboratorio-6:aa"
   },
   "dependencies": {
     "react": "^19.2.0",
